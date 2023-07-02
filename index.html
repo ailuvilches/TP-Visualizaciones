@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Beca - Universidad</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Estilos del modo oscuro */
+    .dark {
+      background-color: #292929;
+      color: #f1f1f1;
+    }
+    .dark .card-title {
+      color: #1f1f1f;
+    }
+  </style>
+  <script>
+    function toggleDarkMode() {
+      const body = document.querySelector('body');
+      const toggleButton = document.querySelector('#toggle-button');
+      body.classList.toggle('dark');
+      
+      // Cambiar el ícono del botón según el modo claro u oscuro
+      if (body.classList.contains('dark')) {
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Botón de alternancia para el modo claro y oscuro -->
+  <button id="toggle-button" class="fixed right-4 top-4 py-4 px-6 rounded-full bg-yellow-300 dark:bg-yellow-700 text-gray-800 dark:text-gray-200">
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <header class="bg-white dark:bg-gray-800">
+    <nav class="container mx-auto py-4 flex justify-between items-center">
+      <div>
+        <img src="logo.png" alt="Logo de la Universidad">
+      </div>
+      <ul class="flex space-x-4">
+        <li><a href="#acerca-de">Acerca de</a></li>
+        <li><a href="#sedes">Sedes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="bg-yellow-500 dark:bg-gray-900 py-2">
+    <ul class="container mx-auto flex space-x-4 justify-between">
+      <li><a href="#">Facultad 1</a></li>
+      <li><a href="#">Facultad 2</a></li>
+      <li><a href="#">Facultad 3</a></li>
+      <li><a href="#">Facultad 4</a></li>
+      <li><a href="#">Facultad 5</a></li>
+      <li><a href="#">Facultad 6</a></li>
+      <li><a href="#">Facultad 7</a></li>
+    </ul>
+  </nav>
+
+  <section class="container mx-auto my-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <img src="./img/5834.jpg" alt="Imagen de Beca 1" class="w-200">
+        <h2 class="text-xl font-bold mt-4 card-title">Beca 1</h2>
+        <p class="text-gray-600 dark:text-gray-400">Breve descripción de la beca 1.</p>
+        <button class="mt-4 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Completar formulario</button>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <img src="./img/5834.jpg" alt="Imagen de Beca 2" class="w-200">
+        <h2 class="text-xl font-bold mt-4 card-title">Beca 2</h2>
+        <p class="text-gray-600 dark:text-gray-400">Breve descripción de la beca 2.</p>
+        <button class="mt-4 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Completar formulario</button>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <img src="./img/5834.jpg" alt="Imagen de Beca 3" class="w-200">
+        <h2 class="text-xl font-bold mt-4 card-title">Beca 3</h2>
+        <p class="text-gray-600 dark:text-gray-400">Breve descripción de la beca 3.</p>
+        <button class="mt-4 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Completar formulario</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section id="acerca-de" class="container mx-auto my-8">
+    <h2 class="text-2xl font-bold">Preguntas frecuentes</h2>
+    <!-- Agrega aquí las preguntas frecuentes -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-200 dark:bg-gray-900 py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.364333972376!2d-58.56538012476784!3d-34.67075316104066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc62cc3ef7083%3A0x8867107f425fade5!2sUniversidad%20Nacional%20de%20La%20Matanza!5e0!3m2!1ses!2sar!4v1688155717329!5m2!1ses!2sar" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
+      <div class="text-gray-600 dark:text-gray-400">
+        <p>Dirección de la Universidad</p>
+        <ul class="flex space-x-2">
+          <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Función para alternar entre los modos claro y oscuro
+    const toggleButton = document.querySelector('#toggle-button');
+    toggleButton.addEventListener('click', toggleDarkMode);
+  </script>
+
+</html>
