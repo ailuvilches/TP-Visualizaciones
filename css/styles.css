@@ -6,6 +6,10 @@ body {
     display: none;
   }
 
+  .frame{
+    width: 600px;
+  }
+
   
   @media (max-width: 768px) {
     #menu-items {
