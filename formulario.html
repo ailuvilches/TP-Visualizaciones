@@ -1,374 +1,273 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solicitud de Beca - Formulario</title>
-    <link rel="stylesheet" href="" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-      /* Estilos del modo oscuro */
-      .dark {
-        background-color: #292929;
-        color: #f1f1f1;
-        .h3 {
-          color: #f1f1f1;
-        }
-      }
-    </style>
-  </head>
 
-  <body>
-    <!-- Botón de alternancia para el modo claro y oscuro -->
-    <button
-      id="toggle-button"
-      class="fixed right-4 top-4 py-4 px-6 rounded-full bg-red-600 dark:bg-red-700 text-gray-800 dark:text-gray-200"
-    >
-      <i class="fas fa-sun"></i>
-    </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitud de Beca - Formulario</title>
+  <link rel="stylesheet" href="" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    .dark {
+      background-color: #292929;
+    }
 
-    <header class="bg-black dark:bg-gray-800">
-      <nav class="container mx-auto py-4 flex justify-between items-center">
-        <div>
-          <img
-            src="./img/LogoIURPconLeyenda_blanco.png"
-            alt="Logo de la Universidad"
-            class="w-24"
-          />
-        </div>
-        <ul class="text-gray-100 space-x-4 mr-20 flex justify-between">
-          <li><a href="#acerca-de">Acerca de</a></li>
-          <li><a href="#sedes">Sedes</a></li>
-        </ul>
-      </nav>
-    </header>
+    .dark label {
+      color: #f1f1f1;
+    }
 
-    <nav class="bg-red-600 dark:bg-gray-900 py-2">
-      <ul class="container mx-auto flex space-x-4 justify-between text-white">
-        <li><a href="#">Unidades Académicas</a></li>
-        <li><a href="#">Extensión Académica</a></li>
-        <li><a href="#">Investigación</a></li>
-        <li><a href="#">Observatorio</a></li>
-        <li><a href="#">Educación a distancia</a></li>
-        <li><a href="#">Biblioteca</a></li>
+    .dark .select {
+      color: #292929;
+    }
+
+    .dark th{
+      color: #f1f1f1;
+    }
+
+    .dark h3 {
+      color: #f1f1f1;
+    }
+
+    .dark p{
+      color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="toggle-button"
+    class="fixed right-4 bottom-4 py-4 px-6 rounded-full bg-red-600 dark:bg-red-700 text-gray-800 dark:text-gray-200">
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <header class="bg-black dark:bg-gray-800">
+    <nav class="container mx-auto py-4 flex justify-between items-center">
+      <div>
+        <a href="./index.html">
+          <img src="./img/LogoIURPconLeyenda_blanco.png" alt="Logo de la Universidad" class="w-24">
+        </a>
+      </div>
+      <div id="menu-toggle" class="block md:hidden">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-200 hover:text-white hover:border-white">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4h20v2H0zm0 5h20v2H0zm0 5h20v2H0z" />
+          </svg>
+        </button>
+      </div>
+      <ul class="text-gray-100 space-x-4 hidden md:flex justify-between">
+        <li><a href="#acerca-de">Acerca de</a></li>
+        <li><a href="#sedes">Sedes</a></li>
       </ul>
     </nav>
+  </header>
 
-    <!-- Incicio del formulario -->
-    <form>
-      <div class="w-3/4 mx-auto rounded-lg my-28">
-        <h3 class="font-bold">Solicitud de Beca</h3>
-        <p class="text-gray-600 dark:text-gray-300">
-          Lee atentamente todos los campos a completar, si tenes dudas podes
-          comunicarte a este número de contacto:
-          <a href="tel:+541147891314">
-            <span>+54 11 4789 1314</span>
-          </a>
-        </p>
-        <div class="accordion">
-          <div class="accordion-item my-4">
-            <div
-              class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2"
-            >
-              <h3>Datos Generales</h3>
-              <i class="fas fa-chevron-down mr-4"></i>
-            </div>
-            <div class="accordion-content">
-              <div class="my-4 flex space-x-4">
-                <div>
-                  <label class="block mb-2"
-                    ><span class="text-red-500">* </span>Carrera:</label
-                  >
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2"
-                    ><span class="text-red-500">* </span>Facultad:</label
-                  >
-                  <select
-                    class="w-full border border-gray-300 rounded-md p-2"
-                    required
-                  >
-                    <option value="Ingeniería">
-                      Ingeniería e Investigaciones Tecnológicas
-                    </option>
-                    <option value="Humanidades">
-                      Humanidades y Ciencias Sociales
-                    </option>
-                    <option value="Económicas">Ciencias Económicas</option>
-                    <option value="Derecho">Derecho y Ciencia Política</option>
-                    <option value="Salud">Ciencias de la Salud</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block mb-2"
-                    ><span class="text-red-500">* </span>Año de ingreso:</label
-                  >
-                  <input
-                    required
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
+  <nav id="menu-items" class="bg-red-600 dark:bg-gray-900 py-2 hidden">
+    <ul class="container mx-auto flex flex-col space-y-2 text-white">
+      <li><a href="#">Unidades Académicas</a></li>
+      <li><a href="#">Extensión Académica</a></li>
+      <li><a href="#">Investigación</a></li>
+      <li><a href="#">Observatorio</a></li>
+      <li><a href="#">Educación a distancia</a></li>
+      <li><a href="#">Biblioteca</a></li>
+    </ul>
+  </nav>
+
+
+  <form>
+    <div class="w-3/4 mx-auto rounded-lg mt-28 mb-56">
+      <h3 class="font-bold">Solicitud de Beca</h3>
+      <p class="text-gray-600 dark:text-gray-300">
+        Lee atentamente todos los campos a completar, si tenes dudas podes
+        comunicarte a este número de contacto:
+        <a href="tel:+541147891314">
+          <span>+54 11 4789 1314</span>
+        </a>
+      </p>
+      <div class="accordion">
+        <div class="accordion-item my-4">
+          <div
+            class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2">
+            <h3>Datos Generales</h3>
+            <i class="fas fa-chevron-down mr-4"></i>
+          </div>
+          <div class="accordion-content hidden">
+            <div class="my-4 flex space-x-4 flex-col md:flex-row">
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Carrera:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
               </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Facultad:</label>
+                <select class="w-full border border-gray-300 rounded-md p-2" required>
+                  <option value="Ingeniería">
+                    Ingeniería e Investigaciones Tecnológicas
+                  </option>
+                  <option value="Humanidades">
+                    Humanidades y Ciencias Sociales
+                  </option>
+                  <option value="Económicas">Ciencias Económicas</option>
+                  <option value="Derecho">Derecho y Ciencia Política</option>
+                  <option value="Salud">Ciencias de la Salud</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Año de ingreso:</label>
+                <input required type="text" class="w-full border border-gray-300 rounded-md p-2" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="accordion-item my-4">
+          <div
+            class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2">
+            <h3>Datos del Alumno</h3>
+            <i class="fas fa-chevron-down mr-4"></i>
+          </div>
+          <div class="accordion-content hidden">
+            <div class="my-4 flex space-x-4 flex-col md:flex-row">
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Nombre:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Apellido:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>DNI:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>CUIL:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+            </div>
+            <div class="my-4 flex space-x-4 flex-col md:flex-row">
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Edad:</label>
+                <input type="number" class="w-full border border-gray-300 rounded-md p-2" readonly />
+              </div>
+              <div>
+                <label class="block mb-2">Sexo:</label>
+                <select class="w-full border border-gray-300 rounded-md p-2">
+                  <option value="Femenino">Femenino</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="No binario">No binario</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div>
+                <label class="block mb-2">Estado Civil:</label>
+                <select class="w-full border border-gray-300 rounded-md p-2">
+                  <option value="Femenino">Soltero</option>
+                  <option value="Masculino">Casado</option>
+                  <option value="No binario">Viudo</option>
+                  <option value="Divorciado">Divorciado</option>
+                </select>
+              </div>
+            </div>
+            <div class="my-4 flex space-x-4 flex-col md:flex-row">
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Fecha de Nacimiento:</label>
+                <input type="date" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Nacionalidad:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+              <div>
+                <label class="block mb-2">Calle:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+              </div>
+              <div>
+                <label class="block mb-2">Numero:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+              </div>
+            </div>
+            <div class="my-4 flex space-x-4 flex-col md:flex-row">
+              <div>
+                <label class="block mb-2">Localidad:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+              </div>
+              <div>
+                <label class="block mb-2">CP:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+              </div>
+              <div>
+                <label class="block mb-2">Telefono:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+              </div>
+              <div>
+                <label class="block mb-2"><span class="text-red-500">* </span>Mail:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" required />
+              </div>
+            </div>
+            <div class="my-4 flex items-center">
+              <label class="block w-32">Trabaja?</label>
+              <div class="flex items-center">
+                <input type="checkbox" class="mr-2" id="trabaja-si" name="trabaja" value="si" />
+                <label for="trabaja-si">Sí</label>
+              </div>
+              <div class="flex items-center ml-4">
+                <input type="checkbox" class="mr-2" id="trabaja-no" name="trabaja" value="no" />
+                <label for="trabaja-no">No</label>
+              </div>
+            </div>
+            <div class="my-4 flex items-center">
+              <label class="block w-32">Monto Percibido:</label>
+              <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+            </div>
+            <div class="my-4 flex items-center">
+              <label class="block w-32">Recibe Beca?</label>
+              <div class="flex items-center">
+                <input type="checkbox" class="mr-2" id="trabaja-si" name="trabaja" value="si" />
+                <label for="trabaja-si">Sí</label>
+              </div>
+              <div class="flex items-center ml-4">
+                <input type="checkbox" class="mr-2" id="trabaja-no" name="trabaja" value="no" />
+                <label for="trabaja-no">No</label>
+              </div>
+            </div>
+
+            <div class="my-4 flex items-center">
+              <label class="block w-32">Tipo:</label>
+              <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+            </div>
+            <div class="my-4 flex items-center">
+              <label class="block w-32">Tiene cobertura de salud?</label>
+              <div class="flex items-center">
+                <input type="checkbox" class="mr-2" id="trabaja-si" name="trabaja" value="si" />
+                <label for="trabaja-si">Sí</label>
+              </div>
+              <div class="flex items-center ml-4">
+                <input type="checkbox" class="mr-2" id="trabaja-no" name="trabaja" value="no" />
+                <label for="trabaja-no">No</label>
+              </div>
+            </div>
+            <div class="my-4 flex items-center">
+              <label class="block w-32">¿Cual?:</label>
+              <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+            </div>
+            <div class="my-4 flex items-center">
+              <label class="block w-32">Medio de transporte habitual:</label>
+              <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
             </div>
           </div>
+        </div>
 
-          <div class="accordion-item my-4">
-            <div
-              class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2"
-            >
-              <h3>Datos del Alumno</h3>
-              <i class="fas fa-chevron-down mr-4"></i>
-            </div>
-            <div class="accordion-content">
-              <div class="my-4 flex space-x-4">
-                <div>
-                  <label class="block mb-2"
-                    ><span class="text-red-500">* </span>Nombre:</label
-                  >
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2"
-                    ><span class="text-red-500">* </span>Apellido:</label
-                  >
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2"
-                    ><span class="text-red-500">* </span>DNI:</label
-                  >
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">CUIL:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-              </div>
-              <div class="my-4 flex space-x-4">
-                <div>
-                  <label class="block mb-2">Edad:</label>
-                  <input
-                    type="number"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Sexo:</label>
-                  <select class="w-full border border-gray-300 rounded-md p-2">
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="No binario">No binario</option>
-                    <option value="Otro">Otro</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block mb-2">Estado Civil:</label>
-                  <select class="w-full border border-gray-300 rounded-md p-2">
-                    <option value="Femenino">Soltero</option>
-                    <option value="Masculino">Casado</option>
-                    <option value="No binario">Viudo</option>
-                    <option value="Divorciado">Divorciado</option>
-                  </select>
-                </div>
-              </div>
-              <div class="my-4 flex space-x-4">
-                <div>
-                  <label class="block mb-2">Fecha de Nacimiento:</label>
-                  <input
-                    type="date"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Nacionalidad:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Calle:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Numero:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-              </div>
-              <div class="my-4 flex space-x-4">
-                <div>
-                  <label class="block mb-2">Localidad:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">CP:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Telefono:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Mail:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
-              </div>
-              <div class="my-4 flex items-center">
-                <label class="block w-32">Trabaja?</label>
-                <div class="flex items-center">
-                  <input
-                    type="checkbox"
-                    class="mr-2"
-                    id="trabaja-si"
-                    name="trabaja"
-                    value="si"
-                  />
-                  <label for="trabaja-si">Sí</label>
-                </div>
-                <div class="flex items-center ml-4">
-                  <input
-                    type="checkbox"
-                    class="mr-2"
-                    id="trabaja-no"
-                    name="trabaja"
-                    value="no"
-                  />
-                  <label for="trabaja-no">No</label>
-                </div>
-              </div>
-              <div class="my-4 flex items-center">
-                <label class="block w-32">Monto Percibido:</label>
-                <input
-                  type="text"
-                  class="w-full border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div class="my-4 flex items-center">
-                <label class="block w-32">Recibe Beca?</label>
-                <div class="flex items-center">
-                  <input
-                    type="checkbox"
-                    class="mr-2"
-                    id="trabaja-si"
-                    name="trabaja"
-                    value="si"
-                  />
-                  <label for="trabaja-si">Sí</label>
-                </div>
-                <div class="flex items-center ml-4">
-                  <input
-                    type="checkbox"
-                    class="mr-2"
-                    id="trabaja-no"
-                    name="trabaja"
-                    value="no"
-                  />
-                  <label for="trabaja-no">No</label>
-                </div>
-              </div>
-
-              <div class="my-4 flex items-center">
-                <label class="block w-32">Tipo:</label>
-                <input
-                  type="text"
-                  class="w-full border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div class="my-4 flex items-center">
-                <label class="block w-32">Tiene cobertura de salud?</label>
-                <div class="flex items-center">
-                  <input
-                    type="checkbox"
-                    class="mr-2"
-                    id="trabaja-si"
-                    name="trabaja"
-                    value="si"
-                  />
-                  <label for="trabaja-si">Sí</label>
-                </div>
-                <div class="flex items-center ml-4">
-                  <input
-                    type="checkbox"
-                    class="mr-2"
-                    id="trabaja-no"
-                    name="trabaja"
-                    value="no"
-                  />
-                  <label for="trabaja-no">No</label>
-                </div>
-              </div>
-              <div class="my-4 flex items-center">
-                <label class="block w-32">¿Cual?:</label>
-                <input
-                  type="text"
-                  class="w-full border border-gray-300 rounded-md p-2"
-                />
-              </div>
-              <div class="my-4 flex items-center">
-                <label class="block w-32">Medio de transporte habitual:</label>
-                <input
-                  type="text"
-                  class="w-full border border-gray-300 rounded-md p-2"
-                />
-              </div>
-            </div>
+        <div class="accordion-item my-4">
+          <div
+            class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2">
+            <h3>Datos del Grupo Familiar</h3>
+            <i class="fas fa-chevron-down mr-4"></i>
           </div>
-
-          <div class="accordion-item my-4">
-            <div
-              class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2"
-            >
-              <h3>Datos del Grupo Familiar</h3>
-              <i class="fas fa-chevron-down mr-4"></i>
-            </div>
-            <div class="accordion-content">
+          <div class="accordion-content hidden">
+            <div class="overflow-x-auto">
               <table class="border-collapse border border-gray-300 mt-4">
                 <thead>
                   <tr>
@@ -544,141 +443,95 @@
               </table>
             </div>
           </div>
+        </div>
 
-          <div class="accordion-item my-4">
-            <div
-              class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2"
-            >
-              <h3>Observaciones</h3>
-              <i class="fas fa-chevron-down mr-4"></i>
-            </div>
-            <div class="accordion-content">
+        <div class="accordion-item my-4">
+          <div
+            class="accordion-title flex justify-between items-center bg-red-600 hover:bg-red-500 text-white cursor-pointer rounded-md p-2">
+            <h3>Observaciones</h3>
+            <i class="fas fa-chevron-down mr-4"></i>
+          </div>
+          <div class="accordion-content hidden">
+            <div class="mt-2">
+              <p>
+                Al completar este formulario no se garantiza el otorgamiento
+                de la beca, sino que queda sujeto a evaluación y aprobación de
+                parte del Instituto.
+              </p>
+              <p>
+                Para finalizar debes adjuntar una serie de documentos
+                detallados a continuación:
+              </p>
+              <div class="my-4 flex items-center">
+                <label class="block">Cargar DNI (Frente y reverso):</label>
+              </div>
+              <input class="my-2" type="file" id="photo1" name="photo1" accept="image/*" />
+              <input class="my-2" type="file" id="photo2" name="photo2" accept="image/*" />
+              <div>
+                <label class="block mb-2">Firma digital:</label>
+                <input type="file" id="photo1" name="photo1" accept="image/*" />
+              </div>
               <div class="mt-2">
-                <p>
-                  Al completar este formulario no se garantiza el otorgamiento
-                  de la beca, sino que queda sujeto a evaluación y aprobación de
-                  parte del Instituto.
-                </p>
-                <p>
-                  Para finalizar debes adjuntar una serie de documentos
-                  detallados a continuación:
-                </p>
-                <div class="my-4 flex items-center">
-                  <label class="block mb-2"
-                    >Cargar DNI (Frente y reverso):</label
-                  >
-                  <input
-                    type="file"
-                    id="photo1"
-                    name="photo1"
-                    accept="image/*"
-                  />
-                  <input
-                    type="file"
-                    id="photo2"
-                    name="photo2"
-                    accept="image/*"
-                  />
-                </div>
-                <div>
-                  <label class="block mb-2">Firma digital:</label>
-                  <input
-                    type="file"
-                    id="photo1"
-                    name="photo1"
-                    accept="image/*"
-                  />
-                </div>
-                <div class="mt-2">
-                  <label class="block w-32">Aclaración:</label>
-                  <input
-                    type="text"
-                    class="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
+                <label class="block w-32">Aclaración:</label>
+                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
               </div>
             </div>
           </div>
         </div>
-        <button
-          type="submit"
-          class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded mt-4 disabled:bg-gray-300 float-right"
-          disabled
-        >
-        <a href="./formulario_exitoso.html">Enviar formulario</a>
-        </button>
       </div>
-    </form>
+      <button type="submit"
+        class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded mt-4 disabled:bg-gray-300 float-right" disabled>
+        <a href="./formulario_exitoso.html">Enviar formulario</a>
+      </button>
+    </div>
+  </form>
 
-    <footer class="bg-gray-100 dark:bg-gray-900 py-4 bottom-0 w-full">
-      <div class="container mx-auto flex justify-between items-center">
-        <div>
+  <footer class="bg-gray-100 dark:bg-gray-900 py-4 bottom-0 w-full">
+    <div class="container mx-auto lg:flex lg:justify-between lg:items-center">
+      <div>
+        <div class="aspect-w-16 aspect-h-5">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13145.303089612886!2d-58.4497749!3d-34.5453062!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43af363526f%3A0x19bba23cdabc3147!2sInstituto%20Universitario%20River%20Plate!5e0!3m2!1ses-419!2sar!4v1688423040879!5m2!1ses-419!2sar"
-            width="600"
-            height="200"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div class="text-gray-600 dark:text-gray-400">
-          <ul class="flex flex-col space-y-2">
-            <li>
-              <a
-                href="http://maps.google.com/?q=Museo%20River%20Plate,%20CABA,%20Argentina"
-                target="_blank"
-              >
-                <span
-                  >Informes: Av. Figueroa Alcorta 7549, CABA, Argentina</span
-                >
-              </a>
-            </li>
-            <li>
-              <span>Lunes a Viernes | 10 a 19 hs.</span>
-            </li>
-            <li>
-              <a href="tel:+541147891314">
-                <span>+54 11 4789 1314</span>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:info@iuriverplate.edu.ar">
-                <span>info@iuriverplate.edu.ar</span>
-              </a>
-            </li>
-          </ul>
+            class="w-full h-full" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-    </footer>
+      <div class="mt-4 lg:mt-0 text-gray-600 dark:text-gray-400">
+        <ul class="flex flex-col space-y-2">
+          <li>
+            <a href="http://maps.google.com/?q=Museo%20River%20Plate,%20CABA,%20Argentina" target="_blank">
+              <span>Informes: Av. Figueroa Alcorta 7549, CABA, Argentina</span>
+            </a>
+          </li>
+          <li>
+            <span>Lunes a Viernes | 10 a 19 hs.</span>
+          </li>
+          <li>
+            <a href="tel:+541147891314">
+              <span>+54 11 4789 1314</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@iuriverplate.edu.ar">
+              <span>info@iuriverplate.edu.ar</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".accordion-title").click(function () {
-          $(this).parent(".accordion-item").toggleClass("active");
-          $(this).next(".accordion-content").slideToggle();
-        });
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".accordion-title").click(function () {
+        $(this).parent(".accordion-item").toggleClass("active");
+        $(this).next(".accordion-content").slideToggle();
       });
-    </script>
-    <script>
-      // Función para alternar entre los modos claro y oscuro
-      const toggleButton = document.querySelector("#toggle-button");
-      toggleButton.addEventListener("click", toggleDarkMode);
+    });
+  </script>
+  <script src="./js/script.js"></script>
+</body>
 
-      function toggleDarkMode() {
-        const body = document.querySelector("body");
-        const toggleButton = document.querySelector("#toggle-button");
-        body.classList.toggle("dark");
-
-        // Cambiar el ícono del botón según el modo claro u oscuro
-        if (body.classList.contains("dark")) {
-          toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-          toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-      }
-    </script>
-  </body>
 </html>

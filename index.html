@@ -9,7 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
   <style>
-    /* Estilos del modo oscuro */
     .dark {
       background-color: #292929;
       color: #f1f1f1;
@@ -18,42 +17,37 @@
       color: #1f1f1f;
     }
   </style>
-  <script>
-    function toggleDarkMode() {
-      const body = document.querySelector('body');
-      const toggleButton = document.querySelector('#toggle-button');
-      body.classList.toggle('dark');
-      
-      // Cambiar el ícono del botón según el modo claro u oscuro
-      if (body.classList.contains('dark')) {
-        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-      } else {
-        toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-      }
-    }
-  </script>
 </head>
 
 <body>
-  <!-- Botón de alternancia para el modo claro y oscuro -->
-  <button id="toggle-button" class="fixed right-4 top-4 py-4 px-6 rounded-full bg-red-600 dark:bg-red-700 text-gray-800 dark:text-gray-200">
+
+  <button id="toggle-button" class="fixed right-4 bottom-4 py-4 px-6 rounded-full bg-red-600 dark:bg-red-700 text-gray-800 dark:text-gray-200">
     <i class="fas fa-sun"></i>
   </button>
 
   <header class="bg-black dark:bg-gray-800">
     <nav class="container mx-auto py-4 flex justify-between items-center">
       <div>
-        <img src="./img/LogoIURPconLeyenda_blanco.png" alt="Logo de la Universidad" class="w-24">
+        <a href="./index.html">
+          <img src="./img/LogoIURPconLeyenda_blanco.png" alt="Logo de la Universidad" class="w-24">
+        </a>
       </div>
-      <ul class="text-gray-100 space-x-4 mr-20 flex justify-between">
+      <div id="menu-toggle" class="block md:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-200 hover:text-white hover:border-white">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4h20v2H0zm0 5h20v2H0zm0 5h20v2H0z" />
+          </svg>
+        </button>
+      </div>
+      <ul class="text-gray-100 space-x-4 hidden md:flex justify-between">
         <li><a href="#acerca-de">Acerca de</a></li>
         <li><a href="#sedes">Sedes</a></li>
       </ul>
     </nav>
   </header>
-
-  <nav class="bg-red-600 dark:bg-gray-900 py-2">
-    <ul class="container mx-auto flex space-x-4 justify-between text-white">
+  
+  <nav id="menu-items" class="bg-red-600 dark:bg-gray-900 py-2 hidden">
+    <ul class="container mx-auto flex flex-col space-y-2 text-white">
       <li><a href="#">Unidades Académicas</a></li>
       <li><a href="#">Extensión Académica</a></li>
       <li><a href="#">Investigación</a></li>
@@ -62,6 +56,7 @@
       <li><a href="#">Biblioteca</a></li>
     </ul>
   </nav>
+  
 
   <section class="container mx-auto my-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -87,28 +82,24 @@
   </section>
 
   <footer class="bg-gray-100 dark:bg-gray-900 py-4 bottom-0 w-full">
-    <div class="container mx-auto flex justify-between items-center">
+    <div class="container mx-auto lg:flex lg:justify-between lg:items-center">
       <div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13145.303089612886!2d-58.4497749!3d-34.5453062!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43af363526f%3A0x19bba23cdabc3147!2sInstituto%20Universitario%20River%20Plate!5e0!3m2!1ses-419!2sar!4v1688423040879!5m2!1ses-419!2sar"
-          width="600"
-          height="200"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div class="aspect-w-16 aspect-h-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13145.303089612886!2d-58.4497749!3d-34.5453062!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43af363526f%3A0x19bba23cdabc3147!2sInstituto%20Universitario%20River%20Plate!5e0!3m2!1ses-419!2sar!4v1688423040879!5m2!1ses-419!2sar"
+            class="w-full h-full"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
-      <div class="text-gray-600 dark:text-gray-400">
+      <div class="mt-4 lg:mt-0 text-gray-600 dark:text-gray-400">
         <ul class="flex flex-col space-y-2">
           <li>
-            <a
-              href="http://maps.google.com/?q=Museo%20River%20Plate,%20CABA,%20Argentina"
-              target="_blank"
-            >
-              <span
-                >Informes: Av. Figueroa Alcorta 7549, CABA, Argentina</span
-              >
+            <a href="http://maps.google.com/?q=Museo%20River%20Plate,%20CABA,%20Argentina" target="_blank">
+              <span>Informes: Av. Figueroa Alcorta 7549, CABA, Argentina</span>
             </a>
           </li>
           <li>
@@ -128,11 +119,8 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Función para alternar entre los modos claro y oscuro
-    const toggleButton = document.querySelector('#toggle-button');
-    toggleButton.addEventListener('click', toggleDarkMode);
-  </script>
+  
+    <script src="./js/script.js"></script>
+</body>
 
 </html>
