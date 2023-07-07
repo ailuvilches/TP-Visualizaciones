@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solicitud de Beca - Formulario</title>
+  <link rel="icon" href="./img/logo-river.png" type="image/x-icon">
   <link rel="stylesheet" href="" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
@@ -83,9 +84,11 @@
         Lee atentamente todos los campos a completar, si tenes dudas podes
         comunicarte a este número de contacto:
         <a href="tel:+541147891314">
-          <span>+54 11 4789 1314</span>
+          <span>+54 11 4789 1314.</span>
         </a>
       </p>
+      <br>
+      <p class="text-gray-600 dark:text-gray-300">Cuando veas este asterisco <span class="text-red-500">* </span>significa que el campo es obligatorio.</p>
       <div class="accordion">
         <div class="accordion-item my-4">
           <div
@@ -191,11 +194,16 @@
             </div>
             <div class="my-4 flex md:space-x-4 flex-col md:flex-row">
               <div>
-                <label class="block mb-2">Localidad:</label>
-                <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
+                <label class="block mb-2"><span class="text-red-500">* </span>CP:</label>
+                <select class="w-full border border-gray-300 rounded-md p-2">
+                  <option value="Femenino" class="text-gray-600">CP</option>
+                  <option value="Masculino">1723</option>
+                  <option value="No binario">1724</option>
+                  <option value="Otro">1725</option>
+                </select>
               </div>
               <div>
-                <label class="block mb-2">CP:</label>
+                <label class="block mb-2">Localidad:</label>
                 <input type="text" class="w-full border border-gray-300 rounded-md p-2" />
               </div>
               <div>
